@@ -114,9 +114,8 @@ def _get_eeg_montage_information(eeg, get_pos):
             loc_y = _to_loc(chanloc['Y'])
             loc_z = _to_loc(chanloc['Z'])
             locs = np.r_[-loc_y, loc_x, loc_z]
-            if not np.any(np.isnan(locs)):
-                pos_ch_names.append(chanloc['labels'])
-                pos.append(locs)
+            pos_ch_names.append(chanloc['labels'])
+            pos.append(locs)
 
     if pos_ch_names:
         montage = make_dig_montage(
